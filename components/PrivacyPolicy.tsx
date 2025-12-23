@@ -19,38 +19,38 @@ const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({ onNavigate }) => {
         <div className="mb-8 md:mb-12">
           <button
             onClick={() => onNavigate('home')}
-            className="inline-flex items-center gap-2 text-slate-400 hover:text-white transition-colors mb-6 md:mb-8 group min-h-[44px] px-2"
+            className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors mb-6 md:mb-8 group min-h-[44px] px-2"
           >
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
             Back to Home
           </button>
           
           <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
-            <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-brand-purple/10 border border-brand-purple/20 flex items-center justify-center flex-shrink-0">
-              <Shield className="w-5 h-5 md:w-6 md:h-6 text-brand-purple" />
+            <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-purple-purple/10 border border-purple/20 flex items-center justify-center flex-shrink-0">
+              <Shield className="w-5 h-5 md:w-6 md:h-6 text-purple" />
             </div>
             <div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2">Privacy Policy</h1>
-              <p className="text-slate-400 text-sm md:text-base">Last updated: January 2025</p>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-2">Privacy Policy</h1>
+              <p className="text-gray-600 text-sm md:text-base">Last updated: January 2025</p>
             </div>
           </div>
         </div>
 
         {/* Content */}
-        <div className="bg-brand-navy_light/50 border border-white/5 rounded-3xl p-6 md:p-8 lg:p-12 space-y-6 md:space-y-8">
+        <div className="bg-white border border-gray-200 rounded-3xl p-6 md:p-8 lg:p-12 space-y-6 md:space-y-8 shadow-sm">
           
           <div>
-            <h2 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">1. Introduction</h2>
-            <p className="text-slate-300 leading-relaxed text-sm md:text-base">
+            <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 md:mb-4">1. Introduction</h2>
+            <p className="text-gray-700 leading-relaxed text-sm md:text-base">
               Build With SDS ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.
             </p>
           </div>
 
           <div>
-            <h2 className="text-2xl font-bold text-white mb-4">2. Information We Collect</h2>
-            <div className="space-y-4 text-slate-300">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">2. Information We Collect</h2>
+            <div className="space-y-4 text-gray-700">
               <div>
-                <h3 className="text-lg font-semibold text-white mb-2">2.1 Information You Provide</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">2.1 Information You Provide</h3>
                 <p className="leading-relaxed">
                   We collect information that you voluntarily provide to us, including:
                 </p>
@@ -62,7 +62,7 @@ const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({ onNavigate }) => {
                 </ul>
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-white mb-2">2.2 Automatically Collected Information</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">2.2 Automatically Collected Information</h3>
                 <p className="leading-relaxed">
                   When you visit our website, we may automatically collect certain information, including:
                 </p>
@@ -77,11 +77,11 @@ const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({ onNavigate }) => {
           </div>
 
           <div>
-            <h2 className="text-2xl font-bold text-white mb-4">3. How We Use Your Information</h2>
-            <p className="text-slate-300 leading-relaxed mb-3">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">3. How We Use Your Information</h2>
+            <p className="text-gray-700 leading-relaxed mb-3">
               We use the information we collect to:
             </p>
-            <ul className="list-disc list-inside ml-4 space-y-2 text-slate-300">
+            <ul className="list-disc list-inside ml-4 space-y-2 text-gray-700">
               <li>Provide, maintain, and improve our services</li>
               <li>Process transactions and send related information</li>
               <li>Respond to your inquiries and provide customer support</li>
@@ -92,30 +92,30 @@ const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({ onNavigate }) => {
           </div>
 
           <div>
-            <h2 className="text-2xl font-bold text-white mb-4">4. Information Sharing and Disclosure</h2>
-            <p className="text-slate-300 leading-relaxed mb-3">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">4. Information Sharing and Disclosure</h2>
+            <p className="text-gray-700 leading-relaxed mb-3">
               We do not sell, trade, or rent your personal information to third parties. We may share your information only in the following circumstances:
             </p>
-            <ul className="list-disc list-inside ml-4 space-y-2 text-slate-300">
-              <li><strong className="text-white">Service Providers:</strong> With trusted third-party service providers who assist us in operating our business</li>
-              <li><strong className="text-white">Legal Requirements:</strong> When required by law or to protect our rights and safety</li>
-              <li><strong className="text-white">Business Transfers:</strong> In connection with any merger, sale, or transfer of assets</li>
+            <ul className="list-disc list-inside ml-4 space-y-2 text-gray-700">
+              <li><strong className="text-gray-900">Service Providers:</strong> With trusted third-party service providers who assist us in operating our business</li>
+              <li><strong className="text-gray-900">Legal Requirements:</strong> When required by law or to protect our rights and safety</li>
+              <li><strong className="text-gray-900">Business Transfers:</strong> In connection with any merger, sale, or transfer of assets</li>
             </ul>
           </div>
 
           <div>
-            <h2 className="text-2xl font-bold text-white mb-4">5. Data Security</h2>
-            <p className="text-slate-300 leading-relaxed">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">5. Data Security</h2>
+            <p className="text-gray-700 leading-relaxed">
               We implement appropriate technical and organizational security measures to protect your personal information. However, no method of transmission over the Internet or electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your information, we cannot guarantee absolute security.
             </p>
           </div>
 
           <div>
-            <h2 className="text-2xl font-bold text-white mb-4">6. Your Rights</h2>
-            <p className="text-slate-300 leading-relaxed mb-3">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">6. Your Rights</h2>
+            <p className="text-gray-700 leading-relaxed mb-3">
               Depending on your location, you may have certain rights regarding your personal information, including:
             </p>
-            <ul className="list-disc list-inside ml-4 space-y-2 text-slate-300">
+            <ul className="list-disc list-inside ml-4 space-y-2 text-gray-700">
               <li>The right to access and receive a copy of your personal data</li>
               <li>The right to rectify inaccurate or incomplete information</li>
               <li>The right to request deletion of your personal information</li>
@@ -125,41 +125,41 @@ const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({ onNavigate }) => {
           </div>
 
           <div>
-            <h2 className="text-2xl font-bold text-white mb-4">7. Cookies and Tracking Technologies</h2>
-            <p className="text-slate-300 leading-relaxed">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">7. Cookies and Tracking Technologies</h2>
+            <p className="text-gray-700 leading-relaxed">
               We use cookies and similar tracking technologies to track activity on our website and hold certain information. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you may not be able to use some portions of our website.
             </p>
           </div>
 
           <div>
-            <h2 className="text-2xl font-bold text-white mb-4">8. Third-Party Links</h2>
-            <p className="text-slate-300 leading-relaxed">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">8. Third-Party Links</h2>
+            <p className="text-gray-700 leading-relaxed">
               Our website may contain links to third-party websites. We are not responsible for the privacy practices or content of these third-party sites. We encourage you to review the privacy policies of any third-party sites you visit.
             </p>
           </div>
 
           <div>
-            <h2 className="text-2xl font-bold text-white mb-4">9. Children's Privacy</h2>
-            <p className="text-slate-300 leading-relaxed">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">9. Children's Privacy</h2>
+            <p className="text-gray-700 leading-relaxed">
               Our services are not intended for individuals under the age of 18. We do not knowingly collect personal information from children. If you believe we have collected information from a child, please contact us immediately.
             </p>
           </div>
 
           <div>
-            <h2 className="text-2xl font-bold text-white mb-4">10. Changes to This Privacy Policy</h2>
-            <p className="text-slate-300 leading-relaxed">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">10. Changes to This Privacy Policy</h2>
+            <p className="text-gray-700 leading-relaxed">
               We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date. You are advised to review this Privacy Policy periodically for any changes.
             </p>
           </div>
 
           <div>
-            <h2 className="text-2xl font-bold text-white mb-4">11. Contact Us</h2>
-            <p className="text-slate-300 leading-relaxed">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">11. Contact Us</h2>
+            <p className="text-gray-700 leading-relaxed">
               If you have any questions about this Privacy Policy, please contact us at:
             </p>
-            <div className="mt-4 p-4 bg-brand-navy border border-white/5 rounded-xl">
-              <p className="text-white font-medium">Build With SDS</p>
-              <p className="text-slate-300">Email: hello@buildwithsds.com</p>
+            <div className="mt-4 p-4 bg-gray-50 border border-gray-200 rounded-xl">
+              <p className="text-gray-900 font-medium">Build With SDS</p>
+              <p className="text-gray-700">Email: hello@buildwithsds.com</p>
             </div>
           </div>
 

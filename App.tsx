@@ -51,33 +51,34 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="relative min-h-screen bg-brand-navy text-foreground overflow-hidden selection:bg-brand-purple/30 selection:text-white">
+    <div className="relative min-h-screen bg-gradient-to-br from-white via-purple/5 to-green-vibrant/5 text-foreground overflow-hidden selection:bg-green-vibrant/30 selection:text-purple-deep">
       {/* Global Background Image */}
       <div 
         className="fixed inset-0 z-0 pointer-events-none bg-cover bg-center bg-no-repeat opacity-[0.15]"
         style={{ backgroundImage: 'url(/bg.png)' }}
       ></div>
       
-      {/* Tech Grid Pattern */}
+      {/* Tech Grid Pattern - Reduced on Mobile */}
       <div 
-        className="fixed inset-0 z-0 pointer-events-none bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"
+        className="hidden md:block fixed inset-0 z-0 pointer-events-none bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#fff_70%,transparent_100%)]"
         style={{
           backgroundImage: `
-            linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px)
+            linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px)
           `,
         }}
       ></div>
       
-      {/* Sophisticated Background Effects */}
+      {/* Animated Background Blobs and Gradients */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
-        {/* Reduced Purple Glows - More Subtle */}
+        {/* Pulsing Purple Blobs - More Vibrant */}
         <motion.div 
-          className="absolute top-0 -left-1/4 w-[600px] h-[600px] bg-brand-purple rounded-full blur-[100px] opacity-12"
+          className="hidden md:block absolute top-0 -left-1/4 w-[600px] h-[600px] bg-purple rounded-full blur-[120px]"
           animate={{
             x: [0, 60, 0],
             y: [0, -50, 0],
-            scale: [1, 1.1, 1],
+            scale: [1, 1.2, 1],
+            opacity: [0.3, 0.45, 0.3],
           }}
           transition={{
             duration: 20,
@@ -86,11 +87,12 @@ const App: React.FC = () => {
           }}
         ></motion.div>
         <motion.div 
-          className="absolute top-1/3 -right-1/4 w-[500px] h-[500px] bg-brand-purple rounded-full blur-[100px] opacity-12"
+          className="hidden md:block absolute top-1/3 -right-1/4 w-[500px] h-[500px] bg-purple rounded-full blur-[120px]"
           animate={{
             x: [0, -40, 0],
             y: [0, 70, 0],
-            scale: [1, 0.95, 1],
+            scale: [1, 0.9, 1],
+            opacity: [0.25, 0.4, 0.25],
           }}
           transition={{
             duration: 25,
@@ -100,14 +102,29 @@ const App: React.FC = () => {
           }}
         ></motion.div>
         
-        {/* Subtle Blue Accent Glows for Depth */}
+        {/* Pulsing Green Blobs - More Vibrant */}
         <motion.div 
-          className="absolute -bottom-1/4 left-1/3 w-[550px] h-[550px] rounded-full blur-[100px] opacity-8"
-          style={{ backgroundColor: 'rgba(59, 130, 246, 0.3)' }}
+          className="hidden md:block absolute bottom-1/4 left-1/3 w-[450px] h-[450px] bg-green-vibrant rounded-full blur-[100px]"
           animate={{
             x: [0, 50, 0],
-            y: [0, -80, 0],
-            scale: [1, 1.05, 1],
+            y: [0, -60, 0],
+            scale: [1, 1.15, 1],
+            opacity: [0.25, 0.4, 0.25],
+          }}
+          transition={{
+            duration: 18,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1.5
+          }}
+        ></motion.div>
+        <motion.div 
+          className="hidden md:block absolute top-2/3 right-1/3 w-[400px] h-[400px] bg-green-bright rounded-full blur-[100px]"
+          animate={{
+            x: [0, -30, 0],
+            y: [0, 40, 0],
+            scale: [1, 1.1, 1],
+            opacity: [0.2, 0.35, 0.2],
           }}
           transition={{
             duration: 22,
@@ -117,43 +134,45 @@ const App: React.FC = () => {
           }}
         ></motion.div>
         
-        {/* Subtle White Light Accents */}
+        {/* Additional Purple Blob - More Vibrant */}
         <motion.div 
-          className="absolute top-1/2 right-1/4 w-[400px] h-[400px] rounded-full blur-[80px] opacity-5"
-          style={{ backgroundColor: 'rgba(255, 255, 255, 0.4)' }}
+          className="hidden md:block absolute bottom-0 left-1/2 w-[550px] h-[550px] bg-purple rounded-full blur-[110px]"
           animate={{
-            x: [0, -30, 0],
-            y: [0, 50, 0],
-            scale: [1, 1.08, 1],
+            x: [0, 40, 0],
+            y: [0, -30, 0],
+            scale: [1, 1.18, 1],
+            opacity: [0.2, 0.35, 0.2],
           }}
           transition={{
-            duration: 18,
+            duration: 24,
             repeat: Infinity,
             ease: "easeInOut",
-            delay: 2
+            delay: 7
           }}
         ></motion.div>
         
-        {/* Subtle Mesh Gradient for Texture */}
+        {/* Static simplified blobs for mobile - More Vibrant */}
+        <div className="md:hidden absolute top-0 -left-1/4 w-[400px] h-[400px] bg-purple rounded-full blur-[80px] opacity-20"></div>
+        <div className="md:hidden absolute top-1/3 -right-1/4 w-[300px] h-[300px] bg-purple rounded-full blur-[80px] opacity-18"></div>
+        <div className="md:hidden absolute bottom-1/4 left-1/3 w-[350px] h-[350px] bg-green-vibrant rounded-full blur-[80px] opacity-18"></div>
+        
+        {/* Enhanced Gradient Overlay - More Vibrant */}
         <div 
-          className="absolute inset-0 opacity-10"
+          className="absolute inset-0"
           style={{
-            background: `
-              radial-gradient(at 20% 30%, rgba(109, 40, 217, 0.08) 0px, transparent 60%),
-              radial-gradient(at 80% 70%, rgba(59, 130, 246, 0.06) 0px, transparent 60%),
-              radial-gradient(at 50% 50%, rgba(255, 255, 255, 0.03) 0px, transparent 60%),
-              radial-gradient(at 30% 80%, rgba(109, 40, 217, 0.05) 0px, transparent 60%)
-            `
+              background: `
+                radial-gradient(at 20% 30%, rgba(87, 31, 125, 0.15) 0px, transparent 60%),
+                radial-gradient(at 80% 70%, rgba(80, 151, 36, 0.12) 0px, transparent 60%),
+                radial-gradient(at 50% 50%, rgba(150, 215, 76, 0.1) 0px, transparent 60%),
+                radial-gradient(at 30% 80%, rgba(87, 31, 125, 0.12) 0px, transparent 60%),
+                radial-gradient(at 70% 20%, rgba(150, 215, 76, 0.08) 0px, transparent 60%)
+              `
           }}
         ></div>
         
-        {/* Subtle Noise Texture */}
+        {/* Base Gradient - More Vibrant */}
         <div 
-          className="absolute inset-0 opacity-[0.02]"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
-            backgroundSize: '200px 200px'
-          }}
+          className="absolute inset-0 bg-gradient-to-br from-purple/10 via-transparent to-green-vibrant/10"
         ></div>
       </div>
 
@@ -164,10 +183,10 @@ const App: React.FC = () => {
           <AnimatePresence mode="wait">
             <motion.div
               key={currentPage}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.3 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
             >
               {renderPage()}
             </motion.div>

@@ -18,10 +18,10 @@ const Button: React.FC<ButtonProps> = ({
   const baseStyles = "inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300 text-sm md:text-base min-h-[48px] touch-manipulation";
   
   const variants = {
-    primary: "bg-gradient-to-r from-brand-purple to-brand-purple text-white shadow-lg shadow-brand-purple/25 hover:shadow-brand-purple/40 hover:scale-[1.02] border border-transparent",
-    secondary: "bg-white text-brand-navy hover:bg-slate-200 shadow-lg shadow-white/10 hover:scale-[1.02]",
-    outline: "bg-brand-navy/50 backdrop-blur-md border border-slate-700 text-slate-300 hover:text-white hover:border-brand-purple/50 hover:bg-brand-navy_light",
-    ghost: "text-slate-400 hover:text-white hover:bg-white/5"
+    primary: "bg-gradient-to-r from-green-vibrant to-green-bright text-white shadow-lg shadow-green-vibrant/25 hover:shadow-green-vibrant/40 hover:scale-[1.02] border border-transparent",
+    secondary: "bg-white text-gray-900 hover:bg-gray-100 shadow-lg shadow-gray-200/50 hover:scale-[1.02] border border-gray-200",
+    outline: "bg-white backdrop-blur-md border border-gray-300 text-gray-700 hover:text-gray-900 hover:border-green-vibrant/50 hover:bg-gray-50",
+    ghost: "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
   };
 
   return (

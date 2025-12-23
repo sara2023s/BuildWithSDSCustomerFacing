@@ -12,14 +12,21 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, setPage }) => {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else if (window.scrollY < 30) {
-        setIsScrolled(false);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          if (window.scrollY > 50) {
+            setIsScrolled(true);
+          } else if (window.scrollY < 30) {
+            setIsScrolled(false);
+          }
+          ticking = false;
+        });
+        ticking = true;
       }
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -30,6 +37,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, setPage }) => {
   };
 
   const navLinks = [
+    { name: 'Home', value: 'home' },
     { name: 'Plans', value: 'services' },
     { name: 'About', value: 'about' },
     { name: 'Portfolio', value: 'work' },
@@ -39,7 +47,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, setPage }) => {
     <nav 
       className={`fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${
         isScrolled 
-          ? 'top-4 md:top-6 w-[95%] sm:w-[90%] md:w-[80%] max-w-5xl rounded-full bg-brand-navy/60 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgb(0,0,0,0.2)] py-2.5 md:py-3 px-4 md:px-6' 
+          ? 'top-4 md:top-6 w-[95%] sm:w-[90%] md:w-[80%] max-w-5xl rounded-full bg-white/90 backdrop-blur-xl border border-gray-200 shadow-[0_8px_32px_rgb(0,0,0,0.1)] py-2.5 md:py-3 px-4 md:px-6' 
           : 'top-0 w-full bg-transparent border-transparent py-4 md:py-6 px-4 md:px-8'
       }`}
     >
@@ -67,8 +75,8 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, setPage }) => {
               height="40"
             />
           </motion.div>
-          <span className="text-lg sm:text-xl font-bold tracking-tight text-white">
-            buildwith<span className="text-violet-400">sds</span>
+          <span className="text-lg sm:text-xl font-bold tracking-tight text-gray-900">
+            buildwith<span className="text-purple">sds</span>
           </span>
         </motion.button>
 
@@ -79,14 +87,14 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, setPage }) => {
               key={link.name} 
               onClick={() => handleNavClick(link.value)}
               className={`text-sm font-medium transition-colors relative group ${
-                currentPage === link.value ? 'text-white' : 'text-slate-300 hover:text-white'
+                currentPage === link.value ? 'text-gray-900' : 'text-gray-600 hover:text-gray-900'
               }`}
               whileHover={{ y: -2 }}
               whileTap={{ y: 0 }}
             >
               {link.name}
               <motion.span 
-                className={`absolute -bottom-1 left-0 h-0.5 bg-brand-purple ${
+                className={`absolute -bottom-1 left-0 h-0.5 bg-green-vibrant ${
                   currentPage === link.value ? 'w-full' : 'w-0'
                 }`}
                 initial={false}
@@ -100,8 +108,8 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, setPage }) => {
             onClick={() => handleNavClick('contact')}
             className={`px-6 py-2.5 text-sm font-semibold rounded-full transition-all hover:scale-105 ${
               isScrolled 
-                ? 'bg-brand-purple text-white shadow-lg shadow-brand-purple/20 hover:bg-violet-600' 
-                : 'bg-white/5 border border-white/10 hover:bg-white/10 hover:border-brand-purple/30'
+                ? 'bg-green-vibrant text-white shadow-lg shadow-green-vibrant/20 hover:bg-green-bright' 
+                : 'bg-gray-100 border border-gray-200 hover:bg-gray-200 hover:border-green-vibrant/30 text-gray-900'
             }`}
           >
             Start Your Build
@@ -110,7 +118,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, setPage }) => {
 
         {/* Mobile Toggle */}
         <button 
-          className="md:hidden p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center text-slate-300 hover:text-white active:scale-95 transition-transform"
+          className="md:hidden p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center text-gray-600 hover:text-gray-900 active:scale-95 transition-transform"
           onClick={() => setIsMobileOpen(!isMobileOpen)}
           aria-label="Toggle menu"
         >
@@ -126,7 +134,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, setPage }) => {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="absolute top-full left-0 right-0 mt-4 mx-auto w-full bg-brand-navy/90 backdrop-blur-2xl border border-white/10 rounded-2xl overflow-hidden shadow-2xl p-4 flex flex-col gap-2 md:hidden"
+            className="absolute top-full left-0 right-0 mt-4 mx-auto w-full bg-white/95 backdrop-blur-2xl border border-gray-200 rounded-2xl overflow-hidden shadow-2xl p-4 flex flex-col gap-2 md:hidden"
           >
             {navLinks.map((link) => (
               <button 
@@ -134,8 +142,8 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, setPage }) => {
                 onClick={() => handleNavClick(link.value)}
                 className={`text-left font-medium py-3 px-4 rounded-xl transition-colors ${
                   currentPage === link.value 
-                    ? 'bg-brand-purple/20 text-brand-purple' 
-                    : 'text-slate-300 hover:text-brand-purple hover:bg-white/5'
+                    ? 'bg-green-vibrant/20 text-green-vibrant' 
+                    : 'text-gray-700 hover:text-green-vibrant hover:bg-gray-50'
                 }`}
               >
                 {link.name}
@@ -144,7 +152,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, setPage }) => {
             <div className="h-px bg-white/5 my-2"></div>
             <button 
               onClick={() => handleNavClick('contact')}
-              className="w-full text-center py-3 rounded-xl bg-brand-purple font-bold text-white shadow-lg shadow-brand-purple/20 active:scale-95 transition-transform"
+              className="w-full text-center py-3 rounded-xl bg-green-vibrant font-bold text-white shadow-lg shadow-green-vibrant/20 active:scale-95 transition-transform"
             >
               Start Your Build
             </button>

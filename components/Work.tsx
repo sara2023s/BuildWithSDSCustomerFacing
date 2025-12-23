@@ -90,7 +90,7 @@ const Work: React.FC<WorkProps> = ({ onNavigate }) => {
            initial={{ opacity: 0, x: -20 }}
            animate={{ opacity: 1, x: 0 }}
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-purple/10 border border-brand-purple/20 text-brand-purple text-xs font-bold uppercase tracking-wider mb-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple/10 border border-purple/20 text-purple text-xs font-bold uppercase tracking-wider mb-4">
             <Filter className="w-3 h-3" />
             Our Work
           </div>
@@ -109,8 +109,8 @@ const Work: React.FC<WorkProps> = ({ onNavigate }) => {
               onClick={() => setFilter(cat)}
               className={`px-4 py-2.5 rounded-full text-sm font-medium transition-all min-h-[44px] ${
                 filter === cat 
-                  ? 'bg-white text-brand-navy shadow-lg shadow-white/10' 
-                  : 'bg-brand-navy_light border border-white/5 text-slate-400 hover:text-white hover:bg-white/5'
+                  ? 'bg-white text-gray-900 shadow-lg shadow-gray-200/50' 
+                  : 'bg-gray-50 border border-gray-200 text-gray-600 hover:text-gray-900 hover:bg-gray-100'
               }`}
             >
               {cat}
@@ -136,7 +136,7 @@ const Work: React.FC<WorkProps> = ({ onNavigate }) => {
             >
               <SpotlightCard className="h-full group cursor-pointer">
                 <div className="relative h-64 md:h-80 overflow-hidden">
-                  <div className="absolute inset-0 bg-brand-navy/20 group-hover:bg-transparent transition-colors z-10"></div>
+                  <div className="absolute inset-0 bg-gray-900/20 group-hover:bg-transparent transition-colors z-10"></div>
                   <img 
                     src={project.image} 
                     alt={project.title} 
@@ -156,7 +156,7 @@ const Work: React.FC<WorkProps> = ({ onNavigate }) => {
                 <div className="p-6 md:p-8 relative">
                    <div className="flex justify-between items-start mb-4">
                      <div>
-                       <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-brand-purple transition-colors">{project.title}</h3>
+                       <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-purple transition-colors">{project.title}</h3>
                        <div className="flex flex-wrap gap-2 mb-4">
                           {project.tags.map(t => (
                             <span key={t} className="text-xs font-mono text-slate-500 bg-white/5 px-2 py-1 rounded border border-white/5">
@@ -165,7 +165,7 @@ const Work: React.FC<WorkProps> = ({ onNavigate }) => {
                           ))}
                        </div>
                      </div>
-                     <div className="p-3 rounded-full bg-white/5 text-slate-300 group-hover:bg-brand-purple group-hover:text-white transition-all transform group-hover:-translate-y-1 group-hover:translate-x-1">
+                     <div className="p-3 rounded-full bg-white/5 text-slate-300 group-hover:bg-purple group-hover:text-white transition-all transform group-hover:-translate-y-1 group-hover:translate-x-1">
                         <ArrowUpRight className="w-5 h-5" />
                      </div>
                    </div>
@@ -175,7 +175,7 @@ const Work: React.FC<WorkProps> = ({ onNavigate }) => {
                    </p>
 
                    <div className="flex gap-4 opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0">
-                      <button className="text-xs font-bold text-white flex items-center gap-1 hover:text-brand-purple transition-colors">
+                      <button className="text-xs font-bold text-white flex items-center gap-1 hover:text-green-vibrant transition-colors">
                         VIEW SITE <ExternalLink className="w-3 h-3" />
                       </button>
                    </div>
@@ -187,7 +187,7 @@ const Work: React.FC<WorkProps> = ({ onNavigate }) => {
       </motion.div>
 
       <div className="mt-20 text-center">
-        <div className="inline-block p-8 rounded-3xl bg-gradient-to-br from-brand-navy_light to-transparent border border-white/5 max-w-2xl mx-auto">
+        <div className="inline-block p-8 rounded-3xl bg-gradient-to-br from-white to-transparent border border-gray-200 max-w-2xl mx-auto shadow-sm">
           <h3 className="text-2xl font-bold text-white mb-4">Ready to start your project?</h3>
           <p className="text-slate-400 mb-8">We treat every project as a portfolio piece. Let's build something award-winning together.</p>
           <Button variant="primary" onClick={() => onNavigate('contact')}>
