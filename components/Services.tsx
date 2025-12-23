@@ -91,11 +91,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, price, su
 
       <motion.button 
         onClick={onClick}
-        className={`w-full py-3.5 md:py-4 rounded-xl font-bold text-sm md:text-base transition-all flex items-center justify-center gap-2 group/btn min-h-[48px] ${
-          highlight 
-            ? "bg-white text-green-vibrant hover:bg-slate-200 shadow-xl shadow-white/10" 
-            : "bg-gray-800 border border-gray-700 hover:bg-green-vibrant text-white hover:text-white border-transparent"
-        }`}
+        className="w-full py-3.5 md:py-4 rounded-xl font-bold text-sm md:text-base transition-all flex items-center justify-center gap-2 group/btn min-h-[48px] bg-white text-green-vibrant hover:bg-slate-200 shadow-xl shadow-white/10"
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
         transition={{ type: "spring", stiffness: 400, damping: 17 }}

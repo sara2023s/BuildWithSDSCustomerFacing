@@ -109,7 +109,7 @@ const Work: React.FC<WorkProps> = ({ onNavigate }) => {
               onClick={() => setFilter(cat)}
               className={`px-4 py-2.5 rounded-full text-sm font-medium transition-all min-h-[44px] ${
                 filter === cat 
-                  ? 'bg-green-vibrant text-white shadow-lg shadow-green-vibrant/20' 
+                  ? 'bg-white text-green-vibrant shadow-xl shadow-white/10 hover:bg-slate-200' 
                   : 'bg-gray-800 border border-gray-700 text-gray-300 hover:text-white hover:bg-gray-700'
               }`}
             >

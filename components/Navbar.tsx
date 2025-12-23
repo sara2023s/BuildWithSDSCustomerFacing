@@ -106,11 +106,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, setPage }) => {
           ))}
           <button 
             onClick={() => handleNavClick('contact')}
-            className={`px-6 py-2.5 text-sm font-semibold rounded-full transition-all hover:scale-105 ${
-              isScrolled 
-                ? 'bg-green-vibrant text-white shadow-lg shadow-green-vibrant/20 hover:bg-green-bright' 
-                : 'bg-gray-800 border border-gray-700 hover:bg-gray-700 hover:border-green-vibrant/30 text-white'
-            }`}
+            className="px-6 py-2.5 text-sm font-semibold rounded-full transition-all hover:scale-105 bg-white text-green-vibrant hover:bg-slate-200 shadow-xl shadow-white/10"
           >
             Start Your Build
           </button>
@@ -152,7 +148,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, setPage }) => {
             <div className="h-px bg-white/5 my-2"></div>
             <button 
               onClick={() => handleNavClick('contact')}
-              className="w-full text-center py-3 rounded-xl bg-green-vibrant font-bold text-white shadow-lg shadow-green-vibrant/20 active:scale-95 transition-transform"
+              className="w-full text-center py-3 rounded-xl bg-white text-green-vibrant hover:bg-slate-200 shadow-xl shadow-white/10 font-bold active:scale-95 transition-transform"
             >
               Start Your Build
             </button>

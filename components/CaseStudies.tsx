@@ -106,7 +106,7 @@ const CaseStudies: React.FC = () => {
                   <span className="font-semibold text-white">Result:</span> {project.solution}
                 </p>
                 
-                <button className="w-full py-3 rounded-xl bg-green-vibrant text-white font-bold opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-4 group-hover:translate-y-0 delay-100 hover:bg-green-bright hover:scale-[1.02] min-h-[48px] text-sm md:text-base">
+                <button className="w-full py-3 rounded-xl bg-white text-green-vibrant hover:bg-slate-200 shadow-xl shadow-white/10 font-bold opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-4 group-hover:translate-y-0 delay-100 hover:scale-[1.02] min-h-[48px] text-sm md:text-base">
                   View Project
                 </button>
               </div>
