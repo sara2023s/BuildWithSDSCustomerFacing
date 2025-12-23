@@ -14,24 +14,24 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
   };
 
   return (
-    <footer className="py-6 md:py-8 bg-gray-50 border-t border-gray-200 text-center md:text-left z-10 relative">
+    <footer className="py-6 md:py-8 bg-gray-950 border-t border-gray-800 text-center md:text-left z-10 relative">
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
         
         <div className="flex flex-col items-center md:items-start gap-1">
-          <div className="text-gray-500 text-sm">
+          <div className="text-gray-400 text-sm">
             &copy; 2025 Build With SDS. All rights reserved.
           </div>
-          <div className="text-gray-600 text-xs">
+          <div className="text-gray-300 text-xs">
             <button 
               onClick={() => handleLinkClick('privacy')}
-              className="hover:text-gray-900 transition-colors py-1 px-2 min-h-[32px]"
+              className="hover:text-white transition-colors py-1 px-2 min-h-[32px]"
             >
               Privacy Policy
             </button>
             {' | '}
             <button 
               onClick={() => handleLinkClick('terms')}
-              className="hover:text-gray-900 transition-colors py-1 px-2 min-h-[32px]"
+              className="hover:text-white transition-colors py-1 px-2 min-h-[32px]"
             >
               Terms of Service
             </button>
@@ -39,13 +39,13 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
         </div>
 
         <div className="flex items-center gap-4 md:gap-6">
-          <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center hover:bg-gray-100 rounded-full" aria-label="GitHub">
+          <a href="#" className="text-gray-300 hover:text-white transition-colors p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center hover:bg-gray-800 rounded-full" aria-label="GitHub">
             <Github className="w-5 h-5" />
           </a>
-          <a href="#" className="text-slate-400 hover:text-green-vibrant transition-colors p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center hover:bg-green-vibrant/10 rounded-full" aria-label="Twitter">
+          <a href="#" className="text-gray-400 hover:text-green-vibrant transition-colors p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center hover:bg-green-vibrant/10 rounded-full" aria-label="Twitter">
             <Twitter className="w-5 h-5" />
           </a>
-          <a href="#" className="text-slate-400 hover:text-violet-400 transition-colors p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center hover:bg-violet-400/10 rounded-full" aria-label="LinkedIn">
+          <a href="#" className="text-gray-400 hover:text-green-vibrant transition-colors p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center hover:bg-green-vibrant/10 rounded-full" aria-label="LinkedIn">
             <Linkedin className="w-5 h-5" />
           </a>
         </div>

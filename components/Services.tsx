@@ -31,10 +31,10 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, price, su
     {/* Glow Effect */}
     <div className={`absolute inset-0 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${highlight ? 'bg-purple/40 opacity-50' : 'bg-purple/20'}`}></div>
     
-    <div className="relative h-full bg-white rounded-[22px] p-6 md:p-8 flex flex-col overflow-hidden border border-gray-200 group-hover:border-gray-300 transition-colors shadow-sm">
+    <div className="relative h-full bg-gray-900 rounded-[22px] p-6 md:p-8 flex flex-col overflow-hidden border border-gray-800 group-hover:border-gray-700 transition-colors shadow-lg">
       
       {highlight && (
-        <div className="absolute top-4 right-4 bg-green-vibrant/20 text-gray-900 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-green-vibrant/30">
+        <div className="absolute top-4 right-4 bg-green-vibrant/20 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-green-vibrant/30">
           Best Value
         </div>
       )}
@@ -42,8 +42,8 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, price, su
       <motion.div 
         className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 ${
           highlight 
-            ? "bg-gradient-to-br from-white to-slate-200 text-purple shadow-lg shadow-white/10" 
-            : "bg-gray-50 border border-gray-200 text-gray-700 group-hover:bg-purple group-hover:text-white group-hover:border-purple/30"
+            ? "bg-gradient-to-br from-white to-slate-200 text-green-vibrant shadow-lg shadow-white/10" 
+            : "bg-gray-800 border border-gray-700 text-gray-300 group-hover:bg-green-vibrant group-hover:text-white group-hover:border-green-vibrant/30"
         }`}
         whileHover={{ scale: 1.1 }}
         transition={{ type: "spring", stiffness: 300, damping: 15 }}
@@ -51,18 +51,18 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, price, su
         {icon}
       </motion.div>
       
-      <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">{title}</h3>
-      <p className="text-gray-600 text-sm mb-4 md:mb-6 leading-relaxed min-h-[40px]">
+      <h3 className="text-xl md:text-2xl font-bold text-white mb-2">{title}</h3>
+      <p className="text-gray-300 text-sm mb-4 md:mb-6 leading-relaxed min-h-[40px]">
         {description}
       </p>
       
-      <div className="mb-6 md:mb-8 pb-6 md:pb-8 border-b border-gray-200">
+      <div className="mb-6 md:mb-8 pb-6 md:pb-8 border-b border-gray-800">
         <div className="flex items-baseline gap-1">
-          <span className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">{price}</span>
-          <span className="text-gray-500 font-medium text-sm md:text-base">/mo</span>
+          <span className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">{price}</span>
+          <span className="text-gray-400 font-medium text-sm md:text-base">/mo</span>
         </div>
         {subPrice && (
-          <div className="mt-3 inline-flex px-3 py-1 rounded-lg bg-gray-100 text-xs font-medium text-gray-600 border border-gray-200">
+          <div className="mt-3 inline-flex px-3 py-1 rounded-lg bg-gray-800 text-xs font-medium text-gray-300 border border-gray-700">
             {subPrice}
           </div>
         )}
@@ -72,7 +72,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, price, su
         {features.map((feature, i) => (
           <motion.div 
             key={i} 
-            className="flex items-start gap-3 text-sm text-gray-700 group/item"
+            className="flex items-start gap-3 text-sm text-gray-300 group/item"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -93,8 +93,8 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, price, su
         onClick={onClick}
         className={`w-full py-3.5 md:py-4 rounded-xl font-bold text-sm md:text-base transition-all flex items-center justify-center gap-2 group/btn min-h-[48px] ${
           highlight 
-            ? "bg-white text-purple hover:bg-slate-200 shadow-xl shadow-white/5" 
-            : "bg-gray-100 border border-gray-200 hover:bg-green-vibrant text-gray-900 hover:text-white border-transparent"
+            ? "bg-white text-green-vibrant hover:bg-slate-200 shadow-xl shadow-white/10" 
+            : "bg-gray-800 border border-gray-700 hover:bg-green-vibrant text-white hover:text-white border-transparent"
         }`}
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
@@ -180,7 +180,7 @@ const Services: React.FC<ServicesProps> = ({ onNavigate }) => {
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 border border-gray-200 text-gray-600 text-xs font-bold uppercase tracking-wider mb-6"
+          className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-800 border border-gray-700 text-gray-300 text-xs font-bold uppercase tracking-wider mb-6"
         >
           Simple Pricing
         </motion.div>
@@ -191,7 +191,7 @@ const Services: React.FC<ServicesProps> = ({ onNavigate }) => {
           viewport={{ once: true }}
           className="text-4xl md:text-6xl font-bold mb-6"
         >
-          Enterprise Tech. <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-green-vibrant drop-shadow-sm">Small Business Pricing.</span>
+          Enterprise Tech. <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-green-vibrant drop-shadow-sm">Small Business Pricing.</span>
         </motion.h2>
         
         <motion.p 
@@ -199,7 +199,7 @@ const Services: React.FC<ServicesProps> = ({ onNavigate }) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto"
+          className="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto"
         >
           Professional development as a subscription. Cancel anytime after 12 months.
         </motion.p>
@@ -216,10 +216,10 @@ const Services: React.FC<ServicesProps> = ({ onNavigate }) => {
       </div>
 
       <div className="mt-16 text-center">
-        <div className="inline-block px-4 py-2 rounded-lg bg-green-vibrant/10 border border-green-vibrant/20 text-gray-900 font-bold text-sm mb-4">
+        <div className="inline-block px-4 py-2 rounded-lg bg-green-vibrant/10 border border-green-vibrant/20 text-white font-bold text-sm mb-4">
            ⚡ Standard Turnaround: 5-7 Days
         </div>
-        <p className="text-gray-600 text-sm">
+        <p className="text-gray-300 text-sm">
           All plans include a standard $299 setup fee for design & architecture, unless waived by a VIP annual contract. <br className="hidden md:block" />
           Prices displayed in NZD + GST.
         </p>

@@ -46,9 +46,9 @@ const Testimonials: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="bg-white border border-gray-200 p-6 md:p-8 rounded-2xl relative hover:bg-gray-50 transition-colors shadow-sm"
+              className="bg-gray-900 border border-gray-800 p-6 md:p-8 rounded-2xl relative hover:bg-gray-800 transition-colors shadow-sm"
             >
-              <Quote className="absolute top-4 right-4 md:top-8 md:right-8 text-purple/20 w-8 h-8 md:w-10 md:h-10" />
+              <Quote className="absolute top-4 right-4 md:top-8 md:right-8 text-green-vibrant/20 w-8 h-8 md:w-10 md:h-10" />
               
               <div className="flex gap-1 mb-4 md:mb-6">
                 {[...Array(review.rating)].map((_, r) => (
@@ -56,13 +56,13 @@ const Testimonials: React.FC = () => {
                 ))}
               </div>
               
-              <p className="text-gray-700 text-base md:text-lg mb-4 md:mb-6 italic leading-relaxed">
+              <p className="text-gray-200 text-base md:text-lg mb-4 md:mb-6 italic leading-relaxed">
                 "{review.quote}"
               </p>
               
               <div>
-                <div className="font-bold text-gray-900">{review.author}</div>
-                <div className="text-purple text-sm">{review.role}</div>
+                <div className="font-bold text-white">{review.author}</div>
+                <div className="text-green-vibrant text-sm">{review.role}</div>
               </div>
             </motion.div>
           ))}

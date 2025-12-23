@@ -51,7 +51,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-white via-purple/5 to-green-vibrant/5 text-foreground overflow-hidden selection:bg-green-vibrant/30 selection:text-purple-deep">
+    <div className="relative min-h-screen bg-gradient-to-br from-gray-950 via-purple-deep/30 to-purple-deep/10 text-foreground overflow-hidden selection:bg-green-vibrant/30 selection:text-white">
       {/* Global Background Image */}
       <div 
         className="fixed inset-0 z-0 pointer-events-none bg-cover bg-center bg-no-repeat opacity-[0.15]"
@@ -60,11 +60,11 @@ const App: React.FC = () => {
       
       {/* Tech Grid Pattern - Reduced on Mobile */}
       <div 
-        className="hidden md:block fixed inset-0 z-0 pointer-events-none bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#fff_70%,transparent_100%)]"
+        className="hidden md:block fixed inset-0 z-0 pointer-events-none bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"
         style={{
           backgroundImage: `
-            linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px)
+            linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px)
           `,
         }}
       ></div>
@@ -151,28 +151,28 @@ const App: React.FC = () => {
           }}
         ></motion.div>
         
-        {/* Static simplified blobs for mobile - More Vibrant */}
-        <div className="md:hidden absolute top-0 -left-1/4 w-[400px] h-[400px] bg-purple rounded-full blur-[80px] opacity-20"></div>
-        <div className="md:hidden absolute top-1/3 -right-1/4 w-[300px] h-[300px] bg-purple rounded-full blur-[80px] opacity-18"></div>
-        <div className="md:hidden absolute bottom-1/4 left-1/3 w-[350px] h-[350px] bg-green-vibrant rounded-full blur-[80px] opacity-18"></div>
+        {/* Static simplified blobs for mobile - Dark Theme */}
+        <div className="md:hidden absolute top-0 -left-1/4 w-[400px] h-[400px] bg-purple rounded-full blur-[80px] opacity-25"></div>
+        <div className="md:hidden absolute top-1/3 -right-1/4 w-[300px] h-[300px] bg-purple rounded-full blur-[80px] opacity-22"></div>
+        <div className="md:hidden absolute bottom-1/4 left-1/3 w-[350px] h-[350px] bg-green-vibrant rounded-full blur-[80px] opacity-22"></div>
         
-        {/* Enhanced Gradient Overlay - More Vibrant */}
+        {/* Enhanced Gradient Overlay - Purple Only */}
         <div 
           className="absolute inset-0"
           style={{
               background: `
-                radial-gradient(at 20% 30%, rgba(87, 31, 125, 0.15) 0px, transparent 60%),
-                radial-gradient(at 80% 70%, rgba(80, 151, 36, 0.12) 0px, transparent 60%),
-                radial-gradient(at 50% 50%, rgba(150, 215, 76, 0.1) 0px, transparent 60%),
-                radial-gradient(at 30% 80%, rgba(87, 31, 125, 0.12) 0px, transparent 60%),
-                radial-gradient(at 70% 20%, rgba(150, 215, 76, 0.08) 0px, transparent 60%)
+                radial-gradient(at 20% 30%, rgba(87, 31, 125, 0.25) 0px, transparent 60%),
+                radial-gradient(at 80% 70%, rgba(87, 31, 125, 0.2) 0px, transparent 60%),
+                radial-gradient(at 50% 50%, rgba(87, 31, 125, 0.15) 0px, transparent 60%),
+                radial-gradient(at 30% 80%, rgba(87, 31, 125, 0.22) 0px, transparent 60%),
+                radial-gradient(at 70% 20%, rgba(87, 31, 125, 0.18) 0px, transparent 60%)
               `
           }}
         ></div>
         
-        {/* Base Gradient - More Vibrant */}
+        {/* Base Gradient - Dark Theme - Purple Only */}
         <div 
-          className="absolute inset-0 bg-gradient-to-br from-purple/10 via-transparent to-green-vibrant/10"
+          className="absolute inset-0 bg-gradient-to-br from-purple-deep/40 via-purple-deep/20 to-purple-deep/10"
         ></div>
       </div>
 

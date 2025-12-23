@@ -47,7 +47,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, setPage }) => {
     <nav 
       className={`fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${
         isScrolled 
-          ? 'top-4 md:top-6 w-[95%] sm:w-[90%] md:w-[80%] max-w-5xl rounded-full bg-white/90 backdrop-blur-xl border border-gray-200 shadow-[0_8px_32px_rgb(0,0,0,0.1)] py-2.5 md:py-3 px-4 md:px-6' 
+          ? 'top-4 md:top-6 w-[95%] sm:w-[90%] md:w-[80%] max-w-5xl rounded-full bg-gray-900/80 backdrop-blur-xl border border-gray-800 shadow-[0_8px_32px_rgb(0,0,0,0.5)] py-2.5 md:py-3 px-4 md:px-6' 
           : 'top-0 w-full bg-transparent border-transparent py-4 md:py-6 px-4 md:px-8'
       }`}
     >
@@ -75,8 +75,8 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, setPage }) => {
               height="40"
             />
           </motion.div>
-          <span className="text-lg sm:text-xl font-bold tracking-tight text-gray-900">
-            buildwith<span className="text-purple">sds</span>
+          <span className="text-lg sm:text-xl font-bold tracking-tight text-white">
+            buildwith<span className="text-green-vibrant">sds</span>
           </span>
         </motion.button>
 
@@ -87,7 +87,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, setPage }) => {
               key={link.name} 
               onClick={() => handleNavClick(link.value)}
               className={`text-sm font-medium transition-colors relative group ${
-                currentPage === link.value ? 'text-gray-900' : 'text-gray-600 hover:text-gray-900'
+                currentPage === link.value ? 'text-white' : 'text-gray-300 hover:text-white'
               }`}
               whileHover={{ y: -2 }}
               whileTap={{ y: 0 }}
@@ -109,7 +109,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, setPage }) => {
             className={`px-6 py-2.5 text-sm font-semibold rounded-full transition-all hover:scale-105 ${
               isScrolled 
                 ? 'bg-green-vibrant text-white shadow-lg shadow-green-vibrant/20 hover:bg-green-bright' 
-                : 'bg-gray-100 border border-gray-200 hover:bg-gray-200 hover:border-green-vibrant/30 text-gray-900'
+                : 'bg-gray-800 border border-gray-700 hover:bg-gray-700 hover:border-green-vibrant/30 text-white'
             }`}
           >
             Start Your Build
@@ -118,7 +118,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, setPage }) => {
 
         {/* Mobile Toggle */}
         <button 
-          className="md:hidden p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center text-gray-600 hover:text-gray-900 active:scale-95 transition-transform"
+          className="md:hidden p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center text-gray-300 hover:text-white active:scale-95 transition-transform"
           onClick={() => setIsMobileOpen(!isMobileOpen)}
           aria-label="Toggle menu"
         >
@@ -134,7 +134,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, setPage }) => {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="absolute top-full left-0 right-0 mt-4 mx-auto w-full bg-white/95 backdrop-blur-2xl border border-gray-200 rounded-2xl overflow-hidden shadow-2xl p-4 flex flex-col gap-2 md:hidden"
+            className="absolute top-full left-0 right-0 mt-4 mx-auto w-full bg-gray-900/95 backdrop-blur-2xl border border-gray-800 rounded-2xl overflow-hidden shadow-2xl p-4 flex flex-col gap-2 md:hidden"
           >
             {navLinks.map((link) => (
               <button 
@@ -143,7 +143,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, setPage }) => {
                 className={`text-left font-medium py-3 px-4 rounded-xl transition-colors ${
                   currentPage === link.value 
                     ? 'bg-green-vibrant/20 text-green-vibrant' 
-                    : 'text-gray-700 hover:text-green-vibrant hover:bg-gray-50'
+                    : 'text-gray-300 hover:text-green-vibrant hover:bg-gray-800'
                 }`}
               >
                 {link.name}

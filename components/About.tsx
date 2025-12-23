@@ -55,22 +55,22 @@ const About: React.FC = () => {
             >
               Stop Renting Space on <br />
               <motion.span 
-                className="text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-green-vibrant drop-shadow-sm"
+                className="text-transparent bg-clip-text bg-gradient-to-r from-white to-green-vibrant drop-shadow-sm"
                 whileHover={{ scale: 1.02 }}
               >
                 Social Media.
               </motion.span>
             </motion.h2>
             
-            <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
+            <div className="space-y-6 text-gray-300 text-lg leading-relaxed">
               <p>
-                <strong className="text-gray-900">Instagram and Facebook are borrowed land.</strong> Algorithms change. Accounts get blocked.
+                <strong className="text-white">Instagram and Facebook are borrowed land.</strong> Algorithms change. Accounts get blocked.
               </p>
               <p>
                 Build With SDS gives your brand a permanent, professional home. We don't use clunky drag-and-drop templates that break in six months. We code high-performance digital assets that elevate your brand image instantly.
               </p>
               <p>
-                Whether you are selling services, products, or building a personal brand, we provide the technical foundation you need to scale. <strong className="text-gray-900">Best of all? We go live in under a week.</strong>
+                Whether you are selling services, products, or building a personal brand, we provide the technical foundation you need to scale. <strong className="text-white">Best of all? We go live in under a week.</strong>
               </p>
             </div>
           </motion.div>
@@ -83,8 +83,8 @@ const About: React.FC = () => {
             className="relative"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-purple/20 to-purple/10 rounded-3xl blur-2xl opacity-20 transform -rotate-3"></div>
-            <div className="relative bg-white border border-gray-200 rounded-3xl p-8 md:p-10 shadow-sm">
-              <h3 className="text-2xl font-bold text-gray-900 mb-8 border-b border-gray-200 pb-4">The SDS Difference</h3>
+            <div className="relative bg-gray-900 border border-gray-800 rounded-3xl p-8 md:p-10 shadow-sm">
+              <h3 className="text-2xl font-bold text-white mb-8 border-b border-gray-800 pb-4">The SDS Difference</h3>
               
               <div className="space-y-8">
                 {differences.map((item, i) => (
@@ -97,15 +97,15 @@ const About: React.FC = () => {
                     transition={{ delay: i * 0.1, duration: 0.3 }}
                   >
                     <motion.div 
-                      className="w-10 h-10 rounded-full bg-gray-100 border border-gray-200 flex items-center justify-center shrink-0 group-hover:border-green-vibrant/50 group-hover:bg-green-vibrant/10 transition-colors"
+                      className="w-10 h-10 rounded-full bg-gray-800 border border-gray-800 flex items-center justify-center shrink-0 group-hover:border-green-vibrant/50 group-hover:bg-green-vibrant/10 transition-colors"
                       whileHover={{ scale: 1.1 }}
                       transition={{ duration: 0.3 }}
                     >
                       <CheckCircle2 className="w-5 h-5 text-green-vibrant" />
                     </motion.div>
                     <div>
-                      <h4 className="text-lg font-bold text-gray-900 mb-1 group-hover:text-green-vibrant transition-colors">{item.title}</h4>
-                      <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+                      <h4 className="text-lg font-bold text-white mb-1 group-hover:text-green-vibrant transition-colors">{item.title}</h4>
+                      <p className="text-gray-300 text-sm leading-relaxed">{item.desc}</p>
                     </div>
                   </motion.div>
                 ))}
