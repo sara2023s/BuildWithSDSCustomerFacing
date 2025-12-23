@@ -39,8 +39,8 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, setPage }) => {
     <nav 
       className={`fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${
         isScrolled 
-          ? 'top-6 w-[90%] md:w-[80%] max-w-5xl rounded-full bg-brand-navy/60 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgb(0,0,0,0.2)] py-3 px-6' 
-          : 'top-0 w-full bg-transparent border-transparent py-6 px-4 md:px-8'
+          ? 'top-4 md:top-6 w-[95%] sm:w-[90%] md:w-[80%] max-w-5xl rounded-full bg-brand-navy/60 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgb(0,0,0,0.2)] py-2.5 md:py-3 px-4 md:px-6' 
+          : 'top-0 w-full bg-transparent border-transparent py-4 md:py-6 px-4 md:px-8'
       }`}
     >
       <div className={`flex items-center justify-between ${!isScrolled ? 'container mx-auto' : 'w-full'}`}>
@@ -61,10 +61,13 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, setPage }) => {
             <img 
               src="/mylogo.png" 
               alt="buildwithsds logo" 
-              className="w-10 h-10 object-contain rounded-full"
+              className="w-8 h-8 sm:w-10 sm:h-10 object-contain rounded-full"
+              loading="eager"
+              width="40"
+              height="40"
             />
           </motion.div>
-          <span className="text-xl font-bold tracking-tight text-white">
+          <span className="text-lg sm:text-xl font-bold tracking-tight text-white">
             buildwith<span className="text-violet-400">sds</span>
           </span>
         </motion.button>
@@ -107,10 +110,11 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, setPage }) => {
 
         {/* Mobile Toggle */}
         <button 
-          className="md:hidden p-2 text-slate-300 hover:text-white"
+          className="md:hidden p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center text-slate-300 hover:text-white active:scale-95 transition-transform"
           onClick={() => setIsMobileOpen(!isMobileOpen)}
+          aria-label="Toggle menu"
         >
-          {isMobileOpen ? <X /> : <Menu />}
+          {isMobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
 

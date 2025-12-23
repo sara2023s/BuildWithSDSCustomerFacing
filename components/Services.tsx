@@ -31,7 +31,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, price, su
     {/* Glow Effect */}
     <div className={`absolute inset-0 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${highlight ? 'bg-brand-purple/40 opacity-50' : 'bg-brand-purple/20'}`}></div>
     
-    <div className="relative h-full bg-brand-navy rounded-[22px] p-8 flex flex-col overflow-hidden border border-white/5 group-hover:border-transparent transition-colors">
+    <div className="relative h-full bg-brand-navy rounded-[22px] p-6 md:p-8 flex flex-col overflow-hidden border border-white/5 group-hover:border-transparent transition-colors">
       
       {highlight && (
         <div className="absolute top-4 right-4 bg-brand-purple/20 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-brand-purple/30">
@@ -51,15 +51,15 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, price, su
         {icon}
       </motion.div>
       
-      <h3 className="text-2xl font-bold text-white mb-2">{title}</h3>
-      <p className="text-slate-400 text-sm mb-6 leading-relaxed min-h-[40px]">
+      <h3 className="text-xl md:text-2xl font-bold text-white mb-2">{title}</h3>
+      <p className="text-slate-400 text-sm mb-4 md:mb-6 leading-relaxed min-h-[40px]">
         {description}
       </p>
       
-      <div className="mb-8 pb-8 border-b border-white/5">
+      <div className="mb-6 md:mb-8 pb-6 md:pb-8 border-b border-white/5">
         <div className="flex items-baseline gap-1">
-          <span className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">{price}</span>
-          <span className="text-slate-500 font-medium">/mo</span>
+          <span className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">{price}</span>
+          <span className="text-slate-500 font-medium text-sm md:text-base">/mo</span>
         </div>
         {subPrice && (
           <div className="mt-3 inline-flex px-3 py-1 rounded-lg bg-white/5 text-xs font-medium text-slate-400 border border-white/5">
@@ -92,7 +92,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, price, su
 
       <motion.button 
         onClick={onClick}
-        className={`w-full py-4 rounded-xl font-bold text-sm transition-all flex items-center justify-center gap-2 group/btn ${
+        className={`w-full py-3.5 md:py-4 rounded-xl font-bold text-sm md:text-base transition-all flex items-center justify-center gap-2 group/btn min-h-[48px] ${
           highlight 
             ? "bg-white text-brand-purple hover:bg-slate-200 shadow-xl shadow-white/5" 
             : "bg-white/5 border border-white/10 hover:bg-white text-white hover:text-brand-navy border-transparent"

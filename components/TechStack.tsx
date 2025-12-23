@@ -33,7 +33,7 @@ const TechStack: React.FC = () => {
           {[...benefits, ...benefits, ...benefits, ...benefits].map((text, index) => (
             <div key={index} className="flex items-center gap-4 text-slate-400 hover:text-brand-purple transition-colors cursor-default group whitespace-nowrap">
               <span className="w-2 h-2 rounded-full bg-brand-purple/50"></span>
-              <span className="text-lg md:text-xl font-bold font-mono tracking-widest">{text}</span>
+              <span className="text-sm sm:text-base md:text-lg lg:text-xl font-bold font-mono tracking-widest">{text}</span>
             </div>
           ))}
         </motion.div>

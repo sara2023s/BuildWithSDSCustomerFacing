@@ -25,7 +25,7 @@ const reviews = [
 
 const Testimonials: React.FC = () => {
   return (
-    <section className="py-24 relative">
+    <section className="py-16 md:py-24 relative">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -33,12 +33,12 @@ const Testimonials: React.FC = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-4">
             Trusted by <span className="text-white">Locals</span>
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {reviews.map((review, i) => (
             <motion.div
               key={i}
@@ -46,17 +46,17 @@ const Testimonials: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="bg-brand-navy_light/50 border border-white/5 p-8 rounded-2xl relative hover:bg-white/5 transition-colors"
+              className="bg-brand-navy_light/50 border border-white/5 p-6 md:p-8 rounded-2xl relative hover:bg-white/5 transition-colors"
             >
-              <Quote className="absolute top-8 right-8 text-brand-purple/20 w-10 h-10" />
+              <Quote className="absolute top-4 right-4 md:top-8 md:right-8 text-brand-purple/20 w-8 h-8 md:w-10 md:h-10" />
               
-              <div className="flex gap-1 mb-6">
+              <div className="flex gap-1 mb-4 md:mb-6">
                 {[...Array(review.rating)].map((_, r) => (
-                  <Star key={r} className="w-4 h-4 text-yellow-500 fill-yellow-500" />
+                  <Star key={r} className="w-3.5 h-3.5 md:w-4 md:h-4 text-yellow-500 fill-yellow-500" />
                 ))}
               </div>
               
-              <p className="text-slate-300 text-lg mb-6 italic leading-relaxed">
+              <p className="text-slate-300 text-base md:text-lg mb-4 md:mb-6 italic leading-relaxed">
                 "{review.quote}"
               </p>
               

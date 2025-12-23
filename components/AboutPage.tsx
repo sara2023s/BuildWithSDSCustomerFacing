@@ -5,36 +5,36 @@ import { ExternalLink, Code2, Rocket, Globe, Zap, ArrowRight } from 'lucide-reac
 
 const AboutPage: React.FC<{ onNavigate: (page: string) => void }> = ({ onNavigate }) => {
   return (
-    <div className="pt-32 pb-24 container mx-auto px-4 md:px-6 min-h-screen flex flex-col items-center">
+    <div className="pt-24 md:pt-32 pb-16 md:pb-24 container mx-auto px-4 md:px-6 min-h-screen flex flex-col items-center">
       
       {/* Header */}
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="text-center max-w-4xl mx-auto mb-20"
+        className="text-center max-w-4xl mx-auto mb-12 md:mb-20"
       >
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-navy_light border border-white/10 text-brand-purple text-xs font-bold uppercase tracking-wider mb-6">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-navy_light border border-white/10 text-brand-purple text-xs font-bold uppercase tracking-wider mb-4 md:mb-6">
           <Code2 className="w-3 h-3" />
           Who We Are
         </div>
-        <h1 className="text-4xl md:text-6xl font-bold mb-6">
-          More than just <br />
+        <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 md:mb-6 px-4">
+          More than just <br className="hidden sm:block" />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-brand-purple">Code & Pixels.</span>
         </h1>
-        <p className="text-slate-400 text-lg md:text-xl leading-relaxed">
+        <p className="text-slate-400 text-base md:text-lg lg:text-xl leading-relaxed px-4">
           We are a boutique digital agency focused on one thing: building high-performance web assets that generate revenue. No bloat, no jargon, just results.
         </p>
       </motion.div>
 
       {/* Main Content Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24 w-full max-w-6xl">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center mb-12 md:mb-24 w-full max-w-6xl">
         
         {/* Left: Stats/Info */}
         <motion.div 
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.2 }}
-          className="bg-brand-navy_light/30 border border-white/10 rounded-3xl p-8 md:p-12 relative overflow-hidden"
+          className="bg-brand-navy_light/30 border border-white/10 rounded-3xl p-6 md:p-8 lg:p-12 relative overflow-hidden"
         >
            <div className="absolute top-0 right-0 w-64 h-64 bg-brand-purple/10 blur-[80px] rounded-full pointer-events-none"></div>
            
@@ -106,7 +106,7 @@ const AboutPage: React.FC<{ onNavigate: (page: string) => void }> = ({ onNavigat
         transition={{ delay: 0.4 }}
         className="w-full max-w-4xl mx-auto text-center relative"
       >
-        <div className="relative bg-gradient-to-r from-brand-purple/20 to-brand-navy/20 border border-brand-purple/20 rounded-3xl p-8 md:p-12 backdrop-blur-sm">
+        <div className="relative bg-gradient-to-r from-brand-purple/20 to-brand-navy/20 border border-brand-purple/20 rounded-3xl p-6 md:p-8 lg:p-12 backdrop-blur-sm">
           <div className="absolute inset-0 bg-gradient-to-r from-brand-purple/10 to-brand-navy/10 rounded-3xl"></div>
           <div className="relative z-10">
             <h2 className="text-3xl font-bold text-white mb-4">Ready to work with us?</h2>

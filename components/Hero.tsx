@@ -19,7 +19,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
 
   return (
     <section 
-      className="relative min-h-[90vh] flex flex-col justify-center pt-32 pb-20 w-full overflow-hidden z-10 group"
+      className="relative min-h-[90vh] flex flex-col justify-center pt-24 md:pt-32 pb-12 md:pb-20 w-full overflow-hidden z-10 group"
       onMouseMove={handleMouseMove}
     >
       {/* Dynamic Spotlight Background - Full Width */}
@@ -91,7 +91,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
 
         {/* Main Headline */}
         <motion.h1 
-          className="text-center text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-8 max-w-5xl"
+          className="text-center text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 md:mb-8 max-w-5xl px-4"
         >
           <motion.span 
             initial={{ opacity: 0, y: 20 }}
@@ -125,7 +125,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.6 }}
-          className="text-center text-lg md:text-xl text-slate-400 max-w-2xl mb-10 leading-relaxed"
+          className="text-center text-base sm:text-lg md:text-xl text-slate-400 max-w-2xl mb-8 md:mb-10 leading-relaxed px-4"
         >
           We engineer high-performance websites for ambitious small businesses. Fully managed, <span className="text-white font-semibold">live in under a week</span>, and designed to convert followers into customers. All for a simple monthly flat fee.
         </motion.p>
@@ -135,7 +135,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.7 }}
-          className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto relative z-30"
+          className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto relative z-30 px-4"
         >
           <motion.div
             whileHover={{ scale: 1.05 }}

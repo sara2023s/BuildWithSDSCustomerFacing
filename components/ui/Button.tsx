@@ -15,7 +15,7 @@ const Button: React.FC<ButtonProps> = ({
   ...props 
 }) => {
   
-  const baseStyles = "inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300 text-sm md:text-base";
+  const baseStyles = "inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300 text-sm md:text-base min-h-[48px] touch-manipulation";
   
   const variants = {
     primary: "bg-gradient-to-r from-brand-purple to-brand-purple text-white shadow-lg shadow-brand-purple/25 hover:shadow-brand-purple/40 hover:scale-[1.02] border border-transparent",

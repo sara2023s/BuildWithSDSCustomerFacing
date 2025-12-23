@@ -8,7 +8,7 @@ interface TermsOfServiceProps {
 
 const TermsOfService: React.FC<TermsOfServiceProps> = ({ onNavigate }) => {
   return (
-    <section className="min-h-screen py-24 container mx-auto px-4 md:px-6">
+    <section className="min-h-screen py-16 md:py-24 container mx-auto px-4 md:px-6">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -16,32 +16,32 @@ const TermsOfService: React.FC<TermsOfServiceProps> = ({ onNavigate }) => {
         className="max-w-4xl mx-auto"
       >
         {/* Header */}
-        <div className="mb-12">
+        <div className="mb-8 md:mb-12">
           <button
             onClick={() => onNavigate('home')}
-            className="inline-flex items-center gap-2 text-slate-400 hover:text-white transition-colors mb-8 group"
+            className="inline-flex items-center gap-2 text-slate-400 hover:text-white transition-colors mb-6 md:mb-8 group min-h-[44px] px-2"
           >
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
             Back to Home
           </button>
           
-          <div className="flex items-center gap-4 mb-6">
-            <div className="w-12 h-12 rounded-xl bg-brand-purple/10 border border-brand-purple/20 flex items-center justify-center">
-              <FileText className="w-6 h-6 text-brand-purple" />
+          <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
+            <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-brand-purple/10 border border-brand-purple/20 flex items-center justify-center flex-shrink-0">
+              <FileText className="w-5 h-5 md:w-6 md:h-6 text-brand-purple" />
             </div>
             <div>
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-2">Terms of Service</h1>
-              <p className="text-slate-400">Last updated: January 2025</p>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2">Terms of Service</h1>
+              <p className="text-slate-400 text-sm md:text-base">Last updated: January 2025</p>
             </div>
           </div>
         </div>
 
         {/* Content */}
-        <div className="bg-brand-navy_light/50 border border-white/5 rounded-3xl p-8 md:p-12 space-y-8">
+        <div className="bg-brand-navy_light/50 border border-white/5 rounded-3xl p-6 md:p-8 lg:p-12 space-y-6 md:space-y-8">
           
           <div>
-            <h2 className="text-2xl font-bold text-white mb-4">1. Agreement to Terms</h2>
-            <p className="text-slate-300 leading-relaxed">
+            <h2 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">1. Agreement to Terms</h2>
+            <p className="text-slate-300 leading-relaxed text-sm md:text-base">
               By accessing or using the services provided by Build With SDS ("we," "us," or "our"), you agree to be bound by these Terms of Service ("Terms"). If you disagree with any part of these terms, you may not access our services.
             </p>
           </div>

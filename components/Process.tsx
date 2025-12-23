@@ -40,22 +40,22 @@ const Process: React.FC = () => {
   };
 
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section className="py-16 md:py-24 relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-navy_light border border-white/10 text-brand-purple text-xs font-bold uppercase tracking-wider mb-4">
             <ArrowRight className="w-3 h-3" />
             Simple Workflow
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 px-4">
             From DM to <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-brand-purple">Done</span>
           </h2>
-          <p className="text-slate-400 text-lg max-w-2xl mx-auto">
+          <p className="text-slate-400 text-base md:text-lg max-w-2xl mx-auto px-4">
             We've stripped away the complexity. Get online without the headache.
           </p>
         </motion.div>
@@ -65,7 +65,7 @@ const Process: React.FC = () => {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 relative max-w-5xl mx-auto"
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 relative max-w-5xl mx-auto"
         >
           {steps.map((step, idx) => (
             <motion.div 
@@ -73,7 +73,7 @@ const Process: React.FC = () => {
               variants={itemVariants}
               className="relative z-10 group"
             >
-              <div className="bg-brand-navy border border-white/5 p-8 rounded-3xl h-full hover:border-brand-purple/30 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-brand-purple/10">
+              <div className="bg-brand-navy border border-white/5 p-6 md:p-8 rounded-3xl h-full hover:border-brand-purple/30 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-brand-purple/10">
                 <div className={`w-14 h-14 rounded-2xl bg-brand-navy_light border border-white/10 flex items-center justify-center mb-6 shadow-inner ${step.color} group-hover:scale-110 transition-transform duration-300`}>
                   {step.icon}
                 </div>

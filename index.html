@@ -3,7 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+    <meta name="theme-color" content="#10132e" />
+    <meta name="mobile-web-app-capable" content="yes" />
     <title>buildwithsds | High-Performance Web Reality</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,6 +45,44 @@
         background-color: #10132e; /* Brand Navy */
         color: hsl(var(--foreground));
         overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      
+      /* Mobile optimizations */
+      @media (max-width: 768px) {
+        * {
+          -webkit-tap-highlight-color: rgba(109, 40, 217, 0.2);
+        }
+        
+        button, a, input, textarea, select {
+          font-size: 16px; /* Prevents iOS zoom on focus */
+        }
+        
+        /* Ensure touch targets are at least 44x44px */
+        button, a[role="button"] {
+          min-height: 44px;
+          min-width: 44px;
+        }
+        
+        /* Improve scrolling performance on mobile */
+        * {
+          -webkit-overflow-scrolling: touch;
+        }
+        
+        /* Optimize images for mobile */
+        img {
+          max-width: 100%;
+          height: auto;
+        }
+      }
+      
+      /* Prevent text size adjustment on iOS */
+      html {
+        -webkit-text-size-adjust: 100%;
+        -moz-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+        text-size-adjust: 100%;
       }
       .font-mono {
         font-family: 'JetBrains Mono', monospace;

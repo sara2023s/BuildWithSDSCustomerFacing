@@ -84,7 +84,7 @@ const Work: React.FC<WorkProps> = ({ onNavigate }) => {
   const filteredProjects = projects.filter(p => filter === 'All' || p.category === filter);
 
   return (
-    <div className="pt-32 pb-24 container mx-auto px-4 md:px-6 min-h-screen">
+    <div className="pt-24 md:pt-32 pb-16 md:pb-24 container mx-auto px-4 md:px-6 min-h-screen">
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
         <motion.div
            initial={{ opacity: 0, x: -20 }}
@@ -94,20 +94,20 @@ const Work: React.FC<WorkProps> = ({ onNavigate }) => {
             <Filter className="w-3 h-3" />
             Our Work
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold">Client <span className="text-slate-500">Showcase</span></h1>
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold">Client <span className="text-slate-500">Showcase</span></h1>
         </motion.div>
 
         {/* Filters */}
         <motion.div 
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="flex flex-wrap gap-2"
+          className="flex flex-wrap gap-2 justify-center md:justify-start"
         >
           {categories.map(cat => (
             <button
               key={cat}
               onClick={() => setFilter(cat)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+              className={`px-4 py-2.5 rounded-full text-sm font-medium transition-all min-h-[44px] ${
                 filter === cat 
                   ? 'bg-white text-brand-navy shadow-lg shadow-white/10' 
                   : 'bg-brand-navy_light border border-white/5 text-slate-400 hover:text-white hover:bg-white/5'
@@ -141,6 +141,8 @@ const Work: React.FC<WorkProps> = ({ onNavigate }) => {
                     src={project.image} 
                     alt={project.title} 
                     className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                    loading="lazy"
+                    decoding="async"
                   />
                   
                   {/* Category Tag */}
